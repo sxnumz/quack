@@ -76,15 +76,15 @@ optional arguments:
   
 # Quack Toolkit examples
 
-> Example of the SMS attack method
+> Example of the SMS attack tool
     
     quack --method SMS --target 15554443333 --time 10 --threads 10
     
-> Example of the HTTP attack method
+> Example of the HTTP attack tool
 
     quack --method HTTP --target http://example.com/ --time 10 --threads 10
     
-> Example of the TCP attack method
+> Example of the TCP attack tool
 
     quack --method TCP --target 192.168.1.100:80 --time 10 --threads 10
 
