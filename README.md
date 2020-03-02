@@ -28,8 +28,8 @@
 # About Quack Toolkit
 
     Quack Toolkit is a set of a denial of service 
-    attack tools. Quack includes SMS attack method, 
-    HTTP attack method and many other attack tools.
+    attack tools. Quack includes SMS attack tool, 
+    HTTP attack tool and many other attack tools.
 
 ***
 
@@ -59,15 +59,15 @@
 
 ```
 usage: quack [-h] [--target <IP:port/URL/phone>]
-             [--method [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]]
+             [--tool [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]]
              [--timeout <timeout>] [--threads <threads>] [-u]
 
 optional arguments:
   -h, --help            show this help message and exit
   --target <IP:port/URL/phone>
                         Target IP:port, URL or phone.
-  --method [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]
-                        Attack method.
+  --tool [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]
+                        Attack tool.
   --timeout <timeout>   Timeout in secounds.
   --threads <threads>   Threads count.
   -u, --update          Update Quack Toolkit.
