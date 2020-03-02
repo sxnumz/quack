@@ -28,8 +28,8 @@
 # About Quack Toolkit
 
     Quack Toolkit is a set of a denial of service 
-    attack methods. Quack includes SMS attack method, 
-    HTTP attack method and many other attack methods.
+    attack tools. Quack includes SMS attack method, 
+    HTTP attack method and many other attack tools.
 
 ***
 
