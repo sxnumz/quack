@@ -36,7 +36,7 @@ def HTTP_ATTACK(threads, attack_time, target):
 	FINISH = False
 
 	if ipTools.isCloudFlare(target):
-		if not input("\033[1;33m"+"[!]"+"\033[0m"+" Current site is under CloudFlare protection. \n"+"\033[1m"+"[?]"+"\033[0m"+"Continue? y/N: ") in ("y", "Y", "1"):
+		if not input("\033[1;33m"+"[!]"+"\033[0m"+" Current site is under CloudFlare protection. \n"+"\033[1m"+"[?]"+"\033[0m"+"Continue HTTP attack? (y/N): ") in ("y", "Y", "1"):
 			exit()
 
 	print("\033[1;34m"+"[*]"+"\033[0m"+" Starting HTTP attack...")
