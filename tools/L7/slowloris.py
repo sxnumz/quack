@@ -76,4 +76,4 @@ def SLOWLORIS_ATTACK(threads, attack_time, target):
 		FINISH = True
 		thread.join()
 	
-	print("\033[1;33m"+"[!]"+"\033[0m"+" SLOWLORIS attack is stopped.")
+	print("\033[1;33m"+"[!]"+"\033[0m"+" SLOWLORIS attack completed.")

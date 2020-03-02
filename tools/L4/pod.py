@@ -64,4 +64,4 @@ def POD_ATTACK(threads, attack_time, target):
 		FINISH = True
 		thread.join()
 	
-	print("\033[1;33m"+"[!]"+"\033[0m"+" POD attack is stopped.")
+	print("\033[1;33m"+"[!]"+"\033[0m"+" POD attack completed.")
