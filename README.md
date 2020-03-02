@@ -76,17 +76,17 @@ optional arguments:
   
 # Quack Toolkit examples
 
-> Example of the SMS attack tool
+> Example of the SMS attack:
     
-    quack --method SMS --target 15554443333 --time 10 --threads 10
+    quack --tool SMS --target 15554443333 --time 10 --threads 10
     
-> Example of the HTTP attack tool
+> Example of the HTTP attack:
 
-    quack --method HTTP --target http://example.com/ --time 10 --threads 10
+    quack --tool HTTP --target http://example.com/ --time 10 --threads 10
     
-> Example of the TCP attack tool
+> Example of the TCP attack:
 
-    quack --method TCP --target 192.168.1.100:80 --time 10 --threads 10
+    quack --tool TCP --target 192.168.1.100:80 --time 10 --threads 10
 
 ***
 
@@ -102,7 +102,7 @@ optional arguments:
 
     MIT License
 
-    Copyright (C) 2019, Entynetproject. All Rights Reserved.
+    Copyright (C) 2020, Entynetproject. All Rights Reserved.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
