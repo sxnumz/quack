@@ -82,7 +82,7 @@ optional arguments:
     
 ## Example of the HTTP attack
 
-> quack --tool HTTP --target http://example.com/ --time 10 --threads 10
+> quack --tool HTTP --target `http://example.com/` --time 10 --threads 10
     
 ## Example of the TCP attack:
 
