@@ -23,6 +23,5 @@
 # SOFTWARE.
 
 import os
-import platform
 
 os.system("clear")
