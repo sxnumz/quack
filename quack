@@ -59,7 +59,7 @@ def main():
 		os.system("chmod +x bin/quack && bin/quack -u")
 		sys.exit()
 
-        elif args.version:
+	elif args.version:
 		print("")
 		os.system("cat banner/banner.txt")
 		print("")
