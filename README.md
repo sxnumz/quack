@@ -60,7 +60,7 @@
 ```
 usage: quack [-h] [--target <IP:port/URL/phone>]
              [--tool [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]]
-             [--timeout <timeout>] [--threads <threads>] [-u]
+             [--timeout <timeout>] [--threads <threads>] [-u] [--version]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -71,6 +71,7 @@ optional arguments:
   --timeout <timeout>   Timeout in secounds.
   --threads <threads>   Threads count.
   -u, --update          Update Quack Toolkit.
+  --version             Show Quack Toolkit version.
 ``` 
 ***
   
