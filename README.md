@@ -82,15 +82,15 @@ optional arguments:
 
 ## Example of the SMS attack
     
-> quack --tool SMS --target 15554443333 --time 10 --threads 10
+> quack --tool SMS --target 15554443333 --timeout 10 --threads 10
     
 ## Example of the HTTP attack
 
-> quack --tool HTTP --target example.com --time 10 --threads 10
+> quack --tool HTTP --target example.com --timeout 10 --threads 10
     
 ## Example of the TCP attack
 
-> quack --tool TCP --target 192.168.1.100:80 --time 10 --threads 10
+> quack --tool TCP --target 192.168.1.100:80 --timeout 10 --threads 10
 
 ***
 
