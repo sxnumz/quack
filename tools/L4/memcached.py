@@ -74,4 +74,4 @@ def MEMCACHED_ATTACK(threads, attack_time, target):
 		FINISH = True
 		thread.join()
 	
-	print("\033[1;33m"+"[!]"+"\033[0m"+" MEMCACHED attack completed.")
+	print("\033[1;33m"+"[!]"+"\033[0m"+" Attack completed.")
