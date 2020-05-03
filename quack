@@ -28,8 +28,18 @@ os.system("printf '\033]2;Quack Toolkit\a'")
 
 import argparse
 import sys
+import signal
+
+def signal_handler(signal, frame):
+    A = '\033[1;33m'
+    W = '\033[0m'
+    E = '\033[0m'
+    print(A+'\n[!]'+W+' You choose to stop attack.'+E)
+    os._exit(0)
+
 
 def main():
+	signal.signal(signal.SIGINT, signal_handler)
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--target", type = str, metavar = "<IP:port/URL/phone>",
 					help = "Target IP:port, URL or phone.")
