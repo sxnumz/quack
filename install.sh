@@ -55,39 +55,10 @@ then
    exit
 fi
 
-{
-pkg update
-pkg -y install git
-apt-get update
-apt-get -y install git
-apk update
-apk add git
-pacman -Sy
-pacman -S --noconfirm git
-zypper refresh
-zypper install -y git
-yum -y install git
-dnf -y install git
-eopkg update-repo
-eopkg -y install git
-xbps-install -S
-xbps-install -y git
-} &> /dev/null
-
-if [[ -d ~/quack ]]
-then
-sleep 0
-else
-cd ~
-{
-git clone https://github.com/entynetproject/quack.git
-} &> /dev/null
-fi
 sleep 0.5
 clear
 sleep 0.5
-echo  
-cd ~/quack
+echo
 cat banner/banner.txt
 echo
 
@@ -131,13 +102,23 @@ xbps-install -y python3
 xbps-install -y python3-pip
 } &> /dev/null
 
+if [[ -d ~/quack ]]
+then
+sleep 0
+else
+cd ~
+{
+git clone https://github.com/entynetproject/quack.git
+} &> /dev/null
+fi
+
 {
 python3 -m pip install setuptools
 python3 -m pip install -r requirements.txt
 } &> /dev/null
 
 {
-cd ~/quack/bin
+cd bin
 cp quack /usr/local/bin
 chmod +x /usr/local/bin/quack
 cp quack /bin
