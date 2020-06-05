@@ -45,7 +45,7 @@ def main():
 	parser.add_argument("--tool", type = str, metavar = "[SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]",
 					help = "Attack tool.")
 	parser.add_argument("--timeout", type = int, default = 10, metavar = "<timeout>",
-					help = 'Timeout in secounds.')
+					help = 'Timeout in seconds.')
 	parser.add_argument("--threads", type = int, default = 3, metavar = "<threads>",
 					help = "Threads count.")
 	parser.add_argument("-u", "--update", action='store_true', dest="update", help = "Update Quack Toolkit.")
