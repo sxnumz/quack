@@ -75,7 +75,7 @@ optional arguments:
                         Target IP:port, URL or phone.
   --tool [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]
                         Attack tool.
-  --timeout <timeout>   Timeout in secounds.
+  --timeout <timeout>   Timeout in seconds.
   --threads <threads>   Threads count.
   -u, --update          Update Quack Toolkit.
   --version             Show Quack Toolkit version.
