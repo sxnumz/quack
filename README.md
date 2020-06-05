@@ -57,7 +57,12 @@ tool, HTTP attack tool and many other attack tools.
 
 # Quack Toolkit execution
 
-> quack -h
+```
+To run Quack Toolkit you should 
+execute the following command.
+```
+
+> quack
 
 ```
 usage: quack [-h] [--target <IP:port/URL/phone>]
