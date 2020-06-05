@@ -65,14 +65,14 @@ execute the following command.
 > quack
 
 ```
-usage: quack [-h] [--target <IP:port/URL/phone>]
+usage: quack [-h] [--target <ip:port/URL/phone>]
              [--tool [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]]
              [--timeout <timeout>] [--threads <threads>] [-u] [--version]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --target <IP:port/URL/phone>
-                        Target IP:port, URL or phone.
+  --target <ip:port/URL/phone>
+                        Target IP and port, URL or phone.
   --tool [SMS|NTP|TCP|UDP|SYN|POD|SLOWLORIS|MEMCACHED|HTTP|NJRAT]
                         Attack tool.
   --timeout <timeout>   Timeout in seconds.
