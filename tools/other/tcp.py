@@ -81,4 +81,4 @@ def TCP_ATTACK(threads, attack_time, target):
 		FINISH = True
 		thread.join()
 	
-	print("\033[1;33m"+"[!]"+"\033[0m"+" Attack completed.")
+	print("\033[1;77m"+"[i]"+"\033[0m"+" Attack completed.")
