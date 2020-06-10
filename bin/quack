@@ -104,6 +104,11 @@ git clone https://github.com/entynetproject/quack.git
 cd $OLDPWD
 cd ~/quack
 } &> /dev/null
+if [[ ! -d ~/quack ]]
+then
+   echo -e ""$E"Execution failed!"
+   exit
+fi
 chmod +x quack
 ./quack $1 $2 $3 $4 $5 $6 $7 $8 $9
 else
